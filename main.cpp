@@ -1,35 +1,36 @@
-#include <cmath>
-#include <iostream>
-#include <cstdlib>
-using namespace std;
-
 /* ---------------------------
 Laboratoire : 03
 Auteur(s) : Jeroshan Jegatheeswaran
 Date : 23.09.2026
-But : Bureau de change 
-Remarque(s) : 
+But : Bureau de change
+Remarque(s) :
 --------------------------- */
+
+#include <cmath>
+#include <iostream>
+#include <cstdlib>
+#include <iomanip>
+using namespace std;
 
 int main() {
 
     // Infos du compte
 
-    const double capital = 1000.0; // en CHF
-    const double tauxChange = 1.024;
-    const double frais = 5.0;
+    const double capital = 1000.0;      // en CHF
+    const double tauxChange = 1.024;    // taux de change CHF a Euros
+    const double frais = 5.0;           // Frais de services
 
-    // Pour Afficher dan sle ticket de fin
+    // Pour Afficher dans le ticket de fin
 
     double euros;
 
-    // Demande des informations du compte
+    // Demande des informations du compte à l'utilisateur
 
     string nom;
     int numCompte;
 
 
-    // Programme initialisation
+    // Programme initialisation demande à l'utilisateur d'entrer ses informations de cours
 
     cout << "Quel est votre numéro de compte ? "<< endl;
     cin >> numCompte;
@@ -57,17 +58,18 @@ int main() {
 
 
 
+    // Affichage du ticket
 
 
     cout << "+-------------------------------+" << endl;
     cout << "|" << endl;
-    cout << "|" << nom << endl;
-    cout << "|" <<numCompte << endl;
+    cout << "| " << nom << endl;
+    cout << "| " <<numCompte << endl;
     cout << "|" << endl;
     cout << "| Somme Euro             : " << euros << endl;
     cout << "| 1 CHF en Euro          : " << tauxChange << endl;
     cout << "|" << endl;
-    cout << "| Somme CHF              : " << sommeChf << endl;
+    cout << "| Somme CHF              : " << fixed << setprecision(2); cout << sommeChf << endl;
     cout << "| Frais                  : " << frais << endl;
     cout << "|" << endl;
     cout << "| Solde Compte           : " << soldeFinal << endl;
